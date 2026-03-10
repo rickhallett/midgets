@@ -27,14 +27,28 @@
   <div class="content">
     {{ .Content }}
   </div>
+  {{/* Navigate within same bootcamp, ordered by step number */}}
+  {{ $currentStep := .Params.step | default 0 }}
+  {{ $currentBootcamp := .Params.bootcamp | default 1 }}
+  {{ $siblings := where .CurrentSection.Pages ".Params.bootcamp" $currentBootcamp }}
+  {{ $prev := false }}
+  {{ $next := false }}
+  {{ range $siblings }}
+    {{ if eq (int (.Params.step | default 0)) (sub (int $currentStep) 1) }}
+      {{ $prev = . }}
+    {{ end }}
+    {{ if eq (int (.Params.step | default 0)) (add (int $currentStep) 1) }}
+      {{ $next = . }}
+    {{ end }}
+  {{ end }}
   <nav style="margin-top: 3rem; padding: 1.5rem 0; border-top: 1px solid var(--border); display: flex; justify-content: center; align-items: center; font-family: var(--font-mono); font-size: 1.1rem; gap: 2rem;">
-    {{ with .PrevInSection }}
+    {{ with $prev }}
     <a href="{{ .RelPermalink }}" title="{{ .Title }}" style="color: var(--cyan); text-decoration: none;">&lsaquo;</a>
     {{ else }}
     <span style="color: var(--border);">&lsaquo;</span>
     {{ end }}
     <a href="/bootcamp/" style="color: var(--text-secondary); text-decoration: none;">index</a>
-    {{ with .NextInSection }}
+    {{ with $next }}
     <a href="{{ .RelPermalink }}" title="{{ .Title }}" style="color: var(--cyan); text-decoration: none;">&rsaquo;</a>
     {{ else }}
     <span style="color: var(--border);">&rsaquo;</span>
