@@ -68,3 +68,5 @@ A1: adapt the gate. Rewrite `make gate` to build the container and run `test-poc
 | A1 | 2026-03-10 | 8aa96ed | Gate adapted: `make gate` builds container, runs test-poc.sh, 10/10 passing |
 | A2 | 2026-03-10 | 6537e2c | drive CLI: tmux sessions + sentinel protocol, 9/9 passing. Gate: 19/19 |
 | B1 | 2026-03-10 | 6537e2c | SPEC.md: midget def, governance crew, gauntlet flow, interfaces, thesis criteria |
+| A3 | 2026-03-10 | c8087d3 | tesseract in container, steer see --ocr, 3/3 passing. Gate: 22/22 |
+| B2 | 2026-03-10 | c8087d3 | Makefile: 13 phase targets (A1-A5, B1-B4, C1-C4), status, graph, done markers |
