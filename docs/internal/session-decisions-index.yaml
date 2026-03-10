@@ -6,9 +6,9 @@
 # The full log is for provenance and archaeology.
 # Only last 10 SDs shown here - read full file for deeper history.
 
-generated: "2026-03-10T10:00:00.000Z"
-total_decisions: 321
-range: "SD-001 to SD-321"
+generated: "2026-03-10T14:30:00.000Z"
+total_decisions: 322
+range: "SD-001 to SD-322"
 note: "Chain carries forward from tspit (pilot study). noopit is thepit-v2 - diverged at SD-278."
 
 # Standing orders that carry forward (always active)
@@ -90,5 +90,9 @@ recent:
     status: "COMPLETE"
   - id: SD-321
     label: "signal-killed"
-    summary: "Operator verbatim: 'Signal has no signal. Kill it.' Signal notation abandoned as a governance compression mechanism. Shorthand achieves equal or better compression with equal decode accuracy [SD-320]. Signal's := -> | & ! operators add no measurable value over bullets and dashes. Convention consistency does not justify a bespoke notation system."
+    summary: "Operator verbatim: 'Signal has no signal. Kill it.' Signal notation abandoned as a governance compression mechanism. Shorthand achieves equal or better compression with equal decode accuracy [SD-320]. The := -> | & ! operators add no measurable value over bullets and dashes. Data: `data/signal-test/`, design: `docs/weaver/signal-vs-shorthand-adversarial-test.md`, script: `bin/signal-test`."
     status: "PERMANENT"
+  - id: SD-322
+    label: "midget-castle"
+    summary: "First build trajectory for midgets. Three phases: (A) agent in container - gate, tmux, OCR, Chromium, agent framework; (B) governance adaptation - SPEC.md, Makefile rewrite, containerised gauntlet, EVAL.md; (C) multi-agent coordination - job server, inter-container comms, orchestration, governance crew as physical agents. Gate first. Plan file: PLAN.md (root)."
+    status: "ACTIVE"
