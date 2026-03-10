@@ -1,15 +1,9 @@
-+++
-title = "Tabular Data with pandas and DuckDB"
-date = "2026-03-10"
-description = "DataFrames, column operations, groupby, joins, reshaping. The foundation for all analysis."
-tags = ["pandas", "duckdb", "data", "bootcamp"]
-step = 1
-tier = 1
-estimate = "4-5 hours"
-bootcamp = 3
-+++
+# Step 1: Tabular Data with pandas and DuckDB
 
-Step 1 of 10 in Bootcamp III: Operational Analytics.
+**Estimated time:** 4-5 hours
+**Prerequisites:** Bootcamp I Step 5 (Python CLI tools) - you need the argparse/stdin/stdout model
+**Leads to:** Step 2 (descriptive statistics)
+**You will need:** Python 3.12+, `uv` for package management
 
 ---
 
@@ -1375,4 +1369,3 @@ percentiles), distribution shape (skewness, histograms), and correlation. Every 
 in Step 2 operates on the DataFrames and Series you learned to construct in Step 1. When
 Step 2 asks "what is the median match confidence score?", it assumes you can load the
 triangulate export, select the confidence column, and call `.median()` without hesitation.
-

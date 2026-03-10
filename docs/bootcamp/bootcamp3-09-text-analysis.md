@@ -1,15 +1,8 @@
-+++
-title = "Text Analysis Basics"
-date = "2026-03-10"
-description = "String similarity, TF-IDF, embedding-based similarity, simple classification, diffing."
-tags = ["text", "analysis", "nlp", "bootcamp"]
-step = 9
-tier = 3
-estimate = "3-4 hours"
-bootcamp = 3
-+++
+# Step 9: Text Analysis Basics
 
-Step 9 of 10 in Bootcamp III: Operational Analytics.
+**Estimated time:** 3-4 hours
+**Prerequisites:** Step 1 (tabular data loading and pandas), Bootcamp I Step 4 (text pipeline and regex)
+**Leads to:** Step 10 (notebook-based analysis workflows)
 
 ---
 
@@ -977,4 +970,3 @@ Before moving on, verify you can answer these questions without looking anything
 ## What to Read Next
 
 **Step 10: Notebook-Based Analysis Workflows** - Bootcamp I Step 5.10 introduced Jupyter as a tool. Step 10 covers how to use it effectively for analytical work: organizing notebooks with clear naming conventions, making analyses reproducible, and the notebook-to-script pipeline. The text analysis techniques from this step are the kind of exploratory work that benefits from a notebook environment - iterating on keyword lists, visualizing TF-IDF matrices, comparing classifier results. Step 10 teaches the workflow discipline that keeps that exploration organized and reproducible.
-

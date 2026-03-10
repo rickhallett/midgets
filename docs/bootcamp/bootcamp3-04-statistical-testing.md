@@ -1,15 +1,8 @@
-+++
-title = "Statistical Testing for Practitioners"
-date = "2026-03-10"
-description = "t-tests, Mann-Whitney, chi-squared, effect size, multiple comparisons. Is the change real or noise?"
-tags = ["statistics", "testing", "bootcamp"]
-step = 4
-tier = 2
-estimate = "3-4 hours"
-bootcamp = 3
-+++
+# Step 4: Statistical Testing for Practitioners
 
-Step 4 of 10 in Bootcamp III: Operational Analytics.
+**Estimated time:** 3-4 hours
+**Prerequisites:** Step 2 (descriptive statistics - central tendency, spread, crosstabs)
+**Leads to:** Step 5 (time series basics)
 
 ---
 
@@ -1151,4 +1144,3 @@ with linear regression, seasonal decomposition, and practical anomaly detection.
 The statistical tests from this step compose directly: once you detect a trend (Step
 5), you test whether it is significant (this step). Once you detect a changepoint
 (Step 5), you measure the effect size before and after (this step).
-

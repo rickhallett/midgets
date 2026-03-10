@@ -1,15 +1,8 @@
-+++
-title = "Descriptive Statistics"
-date = "2026-03-10"
-description = "Central tendency, spread, percentiles, distribution shape, correlation. Describing what you have before claiming anything."
-tags = ["statistics", "analytics", "bootcamp"]
-step = 2
-tier = 1
-estimate = "3-4 hours"
-bootcamp = 3
-+++
+# Step 2: Descriptive Statistics
 
-Step 2 of 10 in Bootcamp III: Operational Analytics.
+**Estimated time:** 3-4 hours
+**Prerequisites:** Step 1 (tabular data with pandas and DuckDB) - you need DataFrame creation and column operations
+**Leads to:** Step 4 (statistical testing), Step 5 (time series basics)
 
 ---
 
@@ -902,4 +895,3 @@ Alternatively, **Step 5: Time Series Basics** takes the descriptive statistics f
 step and adds the time dimension. Instead of "what is the median match confidence?", you
 ask "is the median match confidence trending up or down over the last 10 runs?" Time
 series analysis is description with a temporal axis.
-

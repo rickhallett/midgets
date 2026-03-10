@@ -1,15 +1,8 @@
-+++
-title = "SQL Analytics with DuckDB"
-date = "2026-03-10"
-description = "CTEs, window functions, self-joins, pivoting, date/time operations. Analytical SQL for agent data."
-tags = ["sql", "duckdb", "analytics", "bootcamp"]
-step = 3
-tier = 1
-estimate = "4-5 hours"
-bootcamp = 3
-+++
+# Step 3: SQL Analytics with DuckDB
 
-Step 3 of 10 in Bootcamp III: Operational Analytics.
+**Estimated time:** 4-5 hours
+**Prerequisites:** Step 1 (tabular data with pandas and DuckDB) - you need DataFrame loading and basic DuckDB queries
+**Leads to:** Step 5 (time series basics)
 
 ---
 
@@ -1230,4 +1223,3 @@ the SQL primitives that Step 5 extends with trend detection, seasonality decompo
 and anomaly identification. Step 5 works in both pandas and DuckDB, so the SQL skills
 from this step compose with the pandas skills from Step 1. The question shifts from
 "what happened?" (this step) to "what is the pattern over time?" (Step 5).
-

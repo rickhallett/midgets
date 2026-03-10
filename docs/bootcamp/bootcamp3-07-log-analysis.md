@@ -1,15 +1,9 @@
-+++
-title = "Log Analysis Patterns"
-date = "2026-03-10"
-description = "Log parsing, session reconstruction, error rate computation, latency analysis, JSONL in DuckDB."
-tags = ["logs", "analysis", "bootcamp"]
-step = 7
-tier = 3
-estimate = "3-4 hours"
-bootcamp = 3
-+++
+# Step 7: Log Analysis Patterns
 
-Step 7 of 10 in Bootcamp III: Operational Analytics.
+**Estimated time:** 3-4 hours
+**Prerequisites:** Bootcamp I Step 4 (text pipelines with grep/awk/jq), Step 1 (tabular data loading)
+**Leads to:** Step 8 (anomaly detection and alerting)
+**You will need:** Python 3.11+, pandas 2.x, DuckDB 0.10+, a terminal
 
 ---
 
@@ -1181,4 +1175,3 @@ attention. The error rate trend analysis from Section 3 becomes the input to an
 alerting rule. The latency percentile tables from Section 4 become the baseline for
 detecting performance regressions. The tools remain the same (pandas, DuckDB); the
 questions shift from "what happened?" to "is this normal?"
-

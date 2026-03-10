@@ -1,15 +1,8 @@
-+++
-title = "Visualisation for Decision-Making"
-date = "2026-03-10"
-description = "matplotlib, the right chart for the question, multi-panel figures, heatmaps, annotations."
-tags = ["visualisation", "matplotlib", "bootcamp"]
-step = 6
-tier = 2
-estimate = "4-5 hours"
-bootcamp = 3
-+++
+# Step 6: Visualization for Decision-Making
 
-Step 6 of 10 in Bootcamp III: Operational Analytics.
+**Estimated time:** 4-5 hours
+**Prerequisites:** Step 1 (tabular data with pandas), Step 2 (descriptive statistics)
+**Leads to:** Step 7 (log analysis patterns), Step 8 (cost modeling)
 
 ---
 
@@ -1398,4 +1391,3 @@ from this step apply directly: once you have parsed log data into a DataFrame, y
 plot error rate trends as line charts, latency distributions as histograms, and
 per-session metrics as box plots. Step 6 gives you the plotting tools; Step 7 gives
 you the data to plot.
-

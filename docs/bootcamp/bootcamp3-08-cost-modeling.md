@@ -1,17 +1,8 @@
-+++
-title = "Cost Modelling for API-Based Systems"
-date = "2026-03-10"
-description = "Token economics, cost per task, trend analysis, marginal cost, budget forecasting."
-tags = ["cost", "modelling", "api", "bootcamp"]
-step = 8
-tier = 3
-estimate = "3-4 hours"
-bootcamp = 3
-+++
+# Step 8: Cost Modeling for API-Based Systems
 
-Step 8 of 10 in Bootcamp III: Operational Analytics.
-
----
+**Estimated time:** 3-4 hours
+**Prerequisites:** Step 1 (tabular data fundamentals), Step 5 (time series basics)
+**Leads to:** Step 9 (anomaly detection applied to cost data)
 
 > **FIELD MATURITY: Emerging.** API cost modeling for agent systems is a new practice
 > area. Tooling exists (provider dashboards, billing APIs) but conventions are not settled.
@@ -1159,4 +1150,3 @@ spikes, token usage anomalies, and error rate changes. The budget burn curve fro
 step becomes one of several monitoring surfaces where anomaly detection catches problems
 before they become crises. The z-score and IQR methods from Step 5 get applied to the
 cost time series you built here.
-

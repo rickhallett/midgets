@@ -1,15 +1,8 @@
-+++
-title = "Notebook-Based Analysis Workflows"
-date = "2026-03-10"
-description = "Notebook organisation, reproducibility, the exploration-to-script pipeline, analysis templates."
-tags = ["jupyter", "notebooks", "workflows", "bootcamp"]
-step = 10
-tier = 3
-estimate = "2-3 hours"
-bootcamp = 3
-+++
+# Step 10: Notebook-Based Analysis Workflows
 
-Step 10 of 10 in Bootcamp III: Operational Analytics.
+**Estimated time:** 2-3 hours
+**Prerequisites:** Bootcamp I Step 5.10 (Jupyter introduction), Step 1 (tabular data loading)
+**Leads to:** This is the final step. After this, revisit any earlier step where your analysis felt ad hoc.
 
 ---
 
@@ -740,4 +733,3 @@ Before considering this step complete, verify you can answer these without looki
 This is the final step of Bootcamp III. If you have worked through the curriculum in order, you now have the analytical toolkit to answer operational questions about agentic systems: descriptive statistics, SQL analytics, statistical testing, time series, visualization, log parsing, cost modeling, text analysis, and notebook workflows.
 
 The next step is not another tutorial. It is practice. Pick a real question from your agentic engineering work - "Is model X finding bugs that model Y misses?", "Is our review cost trending up?", "Which slopodar patterns recur most often?" - open a notebook, apply the template from Section 6, and answer it. The curriculum gave you the tools. The work gives you the judgment.
-

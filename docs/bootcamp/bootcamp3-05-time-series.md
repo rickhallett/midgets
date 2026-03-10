@@ -1,15 +1,8 @@
-+++
-title = "Time Series Basics"
-date = "2026-03-10"
-description = "Moving averages, trend detection, seasonality, anomaly detection, change points. Agent metrics over time."
-tags = ["time-series", "analytics", "bootcamp"]
-step = 5
-tier = 2
-estimate = "3-4 hours"
-bootcamp = 3
-+++
+# Step 5: Time Series Basics
 
-Step 5 of 10 in Bootcamp III: Operational Analytics.
+**Estimated time:** 3-4 hours
+**Prerequisites:** Step 2 (descriptive statistics - mean, std, percentiles), Step 3 (SQL analytics - window functions, DATE_TRUNC)
+**Leads to:** Step 6 (visualization for decision-making)
 
 ---
 
@@ -904,4 +897,3 @@ Before moving to Step 6, verify you can answer these questions without looking a
 ## What to Read Next
 
 **Step 6: Visualization for Decision-Making** - A trend line is a number. A chart of that trend line is a story. Step 6 covers matplotlib's object-oriented API for producing functional plots: line charts for trends over time, scatter plots for correlations, histograms for distributions, and multi-panel layouts for decompositions. Every technique in this step - moving averages, trend lines, seasonal decomposition panels, CUSUM curves, anomaly flags overlaid on raw data - becomes more useful when you can see it. Step 6 turns the numbers from Steps 2-5 into visual instruments for operational decision-making.
-
