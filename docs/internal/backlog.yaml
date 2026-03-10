@@ -50,6 +50,22 @@
   created: '2026-03-09T09:53:25.454394+00:00'
   closed: null
   reason: null
+- id: BL-007
+  title: 'Blog publish scheduler: script to flip draft=false on posts by date. Hugo
+    renders future-dated draft=false pages only with buildFuture=true. Need either
+    a cron/CI job that flips draft flag on publish day, or set buildFuture=true and
+    rely solely on date field. Simplest: buildFuture=false (default) + script that
+    sets draft=false and date=today on publish day.'
+  status: open
+  priority: medium
+  tags:
+  - tooling
+  - blog
+  epic: null
+  created: '2026-03-10T13:00:00+00:00'
+  closed: null
+  reason: 'Deferred: dates set on 16 drafts (2026-03-16 through 2026-03-31) but no
+    automated publish mechanism yet'
 - id: BL-006
   title: 'Slopmop v2: Unix pipe filter for slop detection/replacement (T0 deterministic
     + T2 semantic). Prior work shows structural heuristics (T1) unreliable. Added
