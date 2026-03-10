@@ -73,3 +73,5 @@ A1: adapt the gate. Rewrite `make gate` to build the container and run `test-poc
 | A4 | 2026-03-10 | 4ce0827 | Chrome stable in container, steer apps launch --args, 3/3 passing. Gate: 25/25 |
 | B4 | 2026-03-10 | 4ce0827 | EVAL.md: criteria, failure modes, confounds, thesis proof scenario |
 | A5 | 2026-03-10 | 7b39823 | Node.js + claude 2.1.72 in container, agent loop 4/4 passing. Gate: 29/29 |
+| B3 | 2026-03-10 | 550bcd2 | gauntlet wired: .env loaded, gate+pitkeel attest pass (TIER=wip) |
+| C1 | 2026-03-10 | 550bcd2 | jobrunner: shell_command task, YAML in/out, 5/5 passing. Gate: 34/34 |
