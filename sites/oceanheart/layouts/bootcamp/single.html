@@ -41,7 +41,7 @@
       {{ $next = . }}
     {{ end }}
   {{ end }}
-  <nav style="margin-top: 3rem; padding: 1.5rem 0; border-top: 1px solid var(--border); display: flex; justify-content: center; align-items: center; font-family: var(--font-mono); font-size: 1.1rem; gap: 2rem;">
+  <div style="margin-top: 3rem; padding: 1.5rem 0; border-top: 1px solid var(--border); display: flex; justify-content: center; align-items: center; font-family: var(--font-mono); font-size: 1.1rem; gap: 2rem;">
     {{ with $prev }}
     <a href="{{ .RelPermalink }}" title="{{ .Title }}" style="color: var(--cyan); text-decoration: none;">&lsaquo;</a>
     {{ else }}
@@ -53,6 +53,6 @@
     {{ else }}
     <span style="color: var(--border);">&rsaquo;</span>
     {{ end }}
-  </nav>
+  </div>
 </article>
 {{ end }}
