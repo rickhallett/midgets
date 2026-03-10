@@ -1,15 +1,8 @@
-+++
-title = "Verification and Quality for Probabilistic Systems"
-date = "2026-03-10"
-description = "The oracle problem, the quality gate, the Swiss Cheese Model. Five named test anti-patterns."
-tags = ["verification", "quality", "testing", "bootcamp"]
-step = 6
-tier = 2
-estimate = "6-7 hours"
-bootcamp = 2
-+++
+# Step 6: Verification and Quality for Probabilistic Systems
 
-Step 6 of 11 in Bootcamp II: Agentic Engineering Practices.
+**Estimated time:** 6-7 hours
+**Prerequisites:** Step 1 (LLM mechanics - you need generation as probabilistic, L0-L5), Step 4 (context engineering - you need the context quality loop), Bootcamp I Step 7 (git internals - you need commit verification at the object level)
+**Leads to:** Step 7 (the human-AI interface - human judgment as the irreducible verification layer), Step 8 (multi-agent verification patterns)
 
 ---
 
@@ -1994,4 +1987,3 @@ introduced here becomes the governance framework in Step 7 - every taste-require
 goes through the human, and Step 7 teaches you how that human can fail. If this step taught
 you what verification can catch, Step 7 teaches you what verification cannot catch - and
 what to do about it.
-

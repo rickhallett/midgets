@@ -1,15 +1,8 @@
-+++
-title = "Multi-Model Verification Strategies"
-date = "2026-03-10"
-description = "N-version programming for LLMs. Convergence, divergence, triangulation. The monoculture problem."
-tags = ["multi-model", "verification", "triangulation", "bootcamp"]
-step = 8
-tier = 3
-estimate = "3-4 hours"
-bootcamp = 2
-+++
+# Step 8: Multi-Model Verification Strategies
 
-Step 8 of 11 in Bootcamp II: Agentic Engineering Practices.
+**Estimated time:** 3-4 hours
+**Prerequisites:** Step 1 (LLM mechanics - you need L0-L5, generation as probabilistic), Step 6 (verification and quality - you need the quality gate, Swiss Cheese Model, oracle problem), Step 7 (human-AI interface - you need L10/L11, sycophantic drift, the monoculture observation)
+**Leads to:** Step 9 (failure modes and recovery), Step 10 (governance - how multi-model review fits into enterprise process)
 
 ---
 
@@ -929,4 +922,3 @@ fails: failure modes specific to agentic systems (context loss, sycophantic drif
 reference propagation), recovery protocols (checkpoint recovery, rerun over fix-in-place),
 and governance patterns that detect verification failures. Where Step 8 builds a better
 defence, Step 9 prepares for when the defence is breached.
-

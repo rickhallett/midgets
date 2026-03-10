@@ -1,15 +1,8 @@
-+++
-title = "Context Engineering"
-date = "2026-03-10"
-description = "The working set, cold and hot pressure, compaction loss, the dumb zone. The novel discipline."
-tags = ["context", "engineering", "novel", "bootcamp"]
-step = 4
-tier = 2
-estimate = "5-6 hours"
-bootcamp = 2
-+++
+# Step 4: Context Engineering
 
-Step 4 of 11 in Bootcamp II: Agentic Engineering Practices.
+**Estimated time:** 5-6 hours
+**Prerequisites:** Step 1 (LLM mechanics - you need L3 context window dynamics, attention, lost-in-the-middle), Step 3 (prompt engineering - you need system prompts, L8 saturation threshold, working set intro)
+**Leads to:** Step 5 (tool design - tool results cost context budget), Step 6 (verification - the gate as context-independent check), Step 9 (recovery from context failure)
 
 ---
 
@@ -1706,4 +1699,3 @@ Step 5 also covers the poka-yoke principle for tool design - error-proofing the 
 so the model cannot misuse it. This connects directly to Section 6 (the dumb zone): a
 well-designed tool keeps the agent out of the dumb zone by providing exactly the context
 it needs.
-

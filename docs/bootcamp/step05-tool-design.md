@@ -1,15 +1,8 @@
-+++
-title = "Tool Design and Agent-Computer Interfaces"
-date = "2026-03-10"
-description = "ACI design, poka-yoke for tools, MCP, tool result injection. The agent's empirical contact with reality."
-tags = ["tools", "aci", "mcp", "bootcamp"]
-step = 5
-tier = 2
-estimate = "4-5 hours"
-bootcamp = 2
-+++
+# Step 5: Tool Design and Agent-Computer Interfaces
 
-Step 5 of 11 in Bootcamp II: Agentic Engineering Practices.
+**Estimated time:** 4-5 hours
+**Prerequisites:** Step 2 (agent architecture - you need the L6 harness layer and the workflow/agent distinction), Step 3 (prompt engineering - system prompts, structured output, ACI introduction), Bootcamp I Steps 2-3 (shell, filesystem)
+**Leads to:** Step 6 (verification and quality for probabilistic systems)
 
 ---
 
@@ -1825,4 +1818,3 @@ treats the gate as a tool, Step 6 treats verification as a discipline. The tool 
 principles from this step compose directly: well-designed verification tools with
 structured output, concise results, and poka-yoke constraints are what make the gate
 operationally useful rather than ceremonially present.
-

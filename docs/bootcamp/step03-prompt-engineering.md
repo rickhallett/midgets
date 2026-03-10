@@ -1,15 +1,8 @@
-+++
-title = "Prompt Engineering as System Design"
-date = "2026-03-10"
-description = "System prompts as specifications. Structured output. Few-shot patterns. The AGENTS.md pattern."
-tags = ["prompts", "system-design", "bootcamp"]
-step = 3
-tier = 1
-estimate = "5-6 hours"
-bootcamp = 2
-+++
+# Step 3: Prompt Engineering as System Design
 
-Step 3 of 11 in Bootcamp II: Agentic Engineering Practices.
+**Estimated time:** 5-6 hours
+**Prerequisites:** Step 1 (LLM mechanics - you need the layer model, tokenisation, attention, context window concepts), Bootcamp I Step 2 (shell language - structured thinking)
+**Leads to:** Step 4 (context engineering), Step 5 (tool use and function calling)
 
 ---
 
@@ -1445,4 +1438,3 @@ Step 3 covers static content (prompts, grounding documents). Step 4 covers dynam
 the foundation for Step 5's deeper treatment of tool calling at L7: how calls flow through
 the API, how results enter context, and how to design tool ecosystems where the model
 selects the right tool for the right task.
-

@@ -1,15 +1,8 @@
-+++
-title = "Failure Modes and Recovery"
-date = "2026-03-10"
-description = "Seven HCI foot guns in operational depth. Cognitive deskilling. Checkpoint recovery. Governance recursion."
-tags = ["failure", "recovery", "foot-guns", "bootcamp"]
-step = 9
-tier = 3
-estimate = "4-5 hours"
-bootcamp = 2
-+++
+# Step 9: Failure Modes and Recovery
 
-Step 9 of 11 in Bootcamp II: Agentic Engineering Practices.
+**Estimated time:** 4-5 hours
+**Prerequisites:** Step 4 (context engineering - you need cold/hot pressure, compaction loss, the dumb zone), Step 6 (verification and quality - you need the quality gate, the oracle problem), Step 7 (the human-AI interface - you need the layer model L9-L12, the 7 HCI foot guns, sycophantic drift)
+**Leads to:** Step 10 (governance, process, and enterprise integration - operational controls at organisational scale)
 
 ---
 
@@ -1327,4 +1320,3 @@ recursion from recurring. Where Step 9 gave you the vocabulary for what goes wro
 gives you the operational framework for keeping it right at enterprise scale. The
 verifiable/taste-required distinction from Step 6, the foot guns from this step, and the
 multi-model verification from Step 8 all feed into Step 10's governance model.
-

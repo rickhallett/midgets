@@ -25,6 +25,12 @@ HUGO_DIR = REPO_ROOT / "sites" / "oceanheart" / "content" / "bootcamp"
 
 # Mapping: bootcamp number -> (docs glob prefix, hugo glob prefix, subtitle template)
 BOOTCAMP_META = {
+  2: {
+    "docs_prefix": "step0",
+    "hugo_prefix": "ii-",
+    "subtitle": "Step {step} of 11 in Bootcamp II: Agentic Engineering Practices.",
+    "total_steps": 9,
+  },
   3: {
     "docs_prefix": "bootcamp3-",
     "hugo_prefix": "iii-",

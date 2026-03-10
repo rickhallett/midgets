@@ -1,15 +1,8 @@
-+++
-title = "Agent Architecture Patterns"
-date = "2026-03-10"
-description = "Workflows vs agents. The five patterns from Anthropic's guidance. Single-agent vs multi-agent. The simplicity principle."
-tags = ["agents", "architecture", "patterns", "bootcamp"]
-step = 2
-tier = 1
-estimate = "4-5 hours"
-bootcamp = 2
-+++
+# Step 2: Agent Architecture Patterns
 
-Step 2 of 11 in Bootcamp II: Agentic Engineering Practices.
+**Estimated time:** 4-5 hours
+**Prerequisites:** Step 1 (LLM mechanics) - you need the layer model (L0-L5), autoregressive generation, and context window budget concepts
+**Leads to:** Step 4 (context engineering), Step 5 (tool design and agent-computer interfaces)
 
 ---
 
@@ -1260,4 +1253,3 @@ for correct output) is the bridge from architecture to operational practice.
 determine what it can do. Step 5 covers tool design as an engineering discipline: schemas
 that LLMs use reliably, the ACI concept from Anthropic's SWE-bench work, and the finding
 that "we spent more time optimising our tools than the overall prompt."
-

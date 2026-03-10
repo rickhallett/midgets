@@ -1,15 +1,8 @@
-+++
-title = "The Human-AI Interface"
-date = "2026-03-10"
-description = "The layer model (L0-L12), sycophantic drift, the slopodar, seven HCI foot guns."
-tags = ["hci", "layer-model", "slopodar", "bootcamp"]
-step = 7
-tier = 2
-estimate = "5-6 hours"
-bootcamp = 2
-+++
+# Step 7: The Human-AI Interface
 
-Step 7 of 11 in Bootcamp II: Agentic Engineering Practices.
+**Estimated time:** 5-6 hours
+**Prerequisites:** Step 1 (LLM mechanics - you need L0-L5, generation as probabilistic, RLHF), Step 4 (context engineering - you need cold/hot pressure, compaction loss, the dumb zone), Step 6 (verification and quality - you need the oracle problem, verifiable/taste-required, the Swiss Cheese Model)
+**Leads to:** Step 8 (multi-agent verification patterns - L10/L11 in operational use), Step 9 (recovery and resilience - what to do when these failures happen)
 
 ---
 
@@ -1549,4 +1542,3 @@ covers recovery. Compaction loss recovery, checkpoint recovery from durable stat
 boundary amnesia, and the dead reckoning protocol for navigating from the last known
 position when everything else is gone. Step 9 assumes you understand why recovery is needed
 (this step). It covers how to do it.
-

@@ -1,15 +1,8 @@
-+++
-title = "How LLMs Actually Work"
-date = "2026-03-10"
-description = "Transformer architecture, tokenisation, context windows, autoregressive generation. The operational consequences of the math."
-tags = ["llm", "fundamentals", "bootcamp"]
-step = 1
-tier = 1
-estimate = "5-6 hours"
-bootcamp = 2
-+++
+# Step 1: How LLMs Actually Work (For Engineers, Not Researchers)
 
-Step 1 of 11 in Bootcamp II: Agentic Engineering Practices.
+**Estimated time:** 5-6 hours
+**Prerequisites:** Bootcamp I Step 1 (process model) - you need the mental model of systems as layered abstractions with observable and unobservable state
+**Leads to:** Step 2 (agent architecture patterns), Step 3 (prompt engineering as system design)
 
 ---
 
@@ -1863,4 +1856,3 @@ L8 saturation threshold (more context is not monotonically better). The connecti
 Step 1: understanding tokenisation (L1) and attention (L2) tells you why prompt structure
 matters - token boundaries affect parsing, and attention dilution affects which parts of
 your prompt actually influence the output.
-
