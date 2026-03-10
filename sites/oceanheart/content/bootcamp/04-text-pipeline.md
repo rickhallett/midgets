@@ -6,6 +6,7 @@ tags = ["jq", "grep", "awk", "sed", "text-processing", "bootcamp"]
 step = 4
 tier = 2
 estimate = "6-8 hours"
+bootcamp = 1
 +++
 
 Step 4 of 12 in the Agentic Engineering Bootcamp.

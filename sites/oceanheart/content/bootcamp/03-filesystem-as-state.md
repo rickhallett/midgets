@@ -6,6 +6,7 @@ tags = ["filesystem", "linux", "permissions", "proc", "bootcamp"]
 step = 3
 tier = 1
 estimate = "4-6 hours"
+bootcamp = 1
 +++
 
 Step 3 of 12 in the Agentic Engineering Bootcamp.

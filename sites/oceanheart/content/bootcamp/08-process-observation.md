@@ -6,6 +6,7 @@ tags = ["strace", "lsof", "debugging", "observation", "bootcamp"]
 step = 8
 tier = 3
 estimate = "3 hours"
+bootcamp = 1
 +++
 
 Step 8 of 12 in the Agentic Engineering Bootcamp.

@@ -6,6 +6,7 @@ tags = ["git", "internals", "version-control", "bootcamp"]
 step = 7
 tier = 3
 estimate = "4 hours"
+bootcamp = 1
 +++
 
 Step 7 of 12 in the Agentic Engineering Bootcamp.

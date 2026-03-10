@@ -3,18 +3,24 @@ title = "Agentic Engineering Bootcamp"
 description = "First principles for engineers who govern what agents build."
 +++
 
-A structured curriculum that teaches the substrate: the Linux, shell, Python, and tooling knowledge that agentic engineering actually runs on.
+Five structured programmes that take a competent software engineer to a competent agentic engineer - someone who can develop, verify, evaluate, and govern agent-native systems.
 
-This exists because agents construct pipelines, manage processes, and operate Linux systems. When they get things subtly wrong, the human operator must diagnose. Ignorance at the foundation creates problems no verification layer can catch.
+**I: Linux Substrate** - the kernel primitives, shell, filesystem, containers, and networking that agents actually run on. 12 steps, 51-65 hours.
 
-Twelve steps, ordered by a dependency graph. Each step composes into the next. The subject matter is the execution stack, so every concept can be tested immediately in the environment where it will be used.
+**II: Agentic Engineering Practices** - how to work with agents: architecture, context engineering, verification, the human-AI interface, governance. 11 steps, 50-61 hours.
 
-**Ranking criteria** for the learning order:
+**III: Operational Analytics** - the 20% of data science that does 80% of the heavy lifting. pandas, DuckDB, statistics, visualisation, cost modelling. 10 steps, 32-40 hours.
 
-1. **Compositional leverage** -- does this knowledge compose into everything above it?
-2. **Return per hour** -- how much capability per unit of learning time?
-3. **Irreplaceability** -- can an agent compensate for your ignorance, or must you understand it?
+**IV: Evaluation & Adversarial Testing** - how do you know if it's working? Eval design, LLM-as-judge, agent evaluation, red teaming, safety. 9 steps, 39-48 hours.
 
-The third criterion is the differentiator. Where ignorance creates oracle problems that propagate through every verification layer, that knowledge ranks highest.
+**V: Agent Infrastructure in Practice** - RAG, state management, conversation memory, observability, debugging, production patterns. 9 steps, 36-45 hours.
 
-Step 1 is available now as a sample. The rest is in development.
+Total: 51 steps, ~208-259 hours. Not a weekend project - a practitioner's field guide built from operational experience.
+
+**Ranking criteria** for the learning order within each bootcamp:
+
+1. **Compositional leverage** - does this knowledge compose into everything above it?
+2. **Return per hour** - how much capability per unit of learning time?
+3. **Irreplaceability** - can an agent compensate for your ignorance, or must you understand it?
+
+Step I.1 is available now as a sample. The rest is in development.

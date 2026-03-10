@@ -6,6 +6,7 @@ tags = ["systemd", "cron", "supervision", "reliability", "bootcamp"]
 step = 11
 tier = 4
 estimate = "3 hours"
+bootcamp = 1
 +++
 
 Step 11 of 12 in the Agentic Engineering Bootcamp.

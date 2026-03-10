@@ -6,6 +6,7 @@ tags = ["python", "cli", "subprocess", "uv", "bootcamp"]
 step = 5
 tier = 2
 estimate = "4 hours"
+bootcamp = 1
 +++
 
 Step 5 of 12 in the Agentic Engineering Bootcamp.

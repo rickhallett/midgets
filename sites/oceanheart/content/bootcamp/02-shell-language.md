@@ -6,6 +6,7 @@ tags = ["shell", "bash", "posix", "scripting", "bootcamp"]
 step = 2
 tier = 1
 estimate = "8-12 hours"
+bootcamp = 1
 +++
 
 Step 2 of 12 in the Agentic Engineering Bootcamp.

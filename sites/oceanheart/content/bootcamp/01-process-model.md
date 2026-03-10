@@ -7,6 +7,7 @@ step = 1
 tier = 1
 estimate = "4-6 hours"
 sample = true
+bootcamp = 1
 +++
 
 Step 1 of 12 in the Agentic Engineering Bootcamp.

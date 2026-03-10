@@ -6,6 +6,7 @@ tags = ["bash", "advanced", "shellcheck", "patterns", "bootcamp"]
 step = 12
 tier = 4
 estimate = "3 hours"
+bootcamp = 1
 +++
 
 Step 12 of 12 in the Agentic Engineering Bootcamp.

@@ -6,6 +6,7 @@ tags = ["make", "just", "orchestration", "build-systems", "bootcamp"]
 step = 6
 tier = 2
 estimate = "4-5 hours"
+bootcamp = 1
 +++
 
 Step 6 of 12 in the Agentic Engineering Bootcamp.

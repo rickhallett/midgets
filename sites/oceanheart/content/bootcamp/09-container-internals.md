@@ -6,6 +6,7 @@ tags = ["containers", "docker", "namespaces", "cgroups", "bootcamp"]
 step = 9
 tier = 3
 estimate = "4 hours"
+bootcamp = 1
 +++
 
 Step 9 of 12 in the Agentic Engineering Bootcamp.

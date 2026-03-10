@@ -6,6 +6,7 @@ tags = ["networking", "curl", "dns", "tls", "bootcamp"]
 step = 10
 tier = 4
 estimate = "4 hours"
+bootcamp = 1
 +++
 
 Step 10 of 12 in the Agentic Engineering Bootcamp.
