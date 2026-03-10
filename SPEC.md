@@ -16,7 +16,7 @@ The core claim: governance controls that currently exist only as prompts and pro
 
 A midget is a Docker container running:
 
-- Ubuntu 24.04 base
+- Debian Bookworm Slim base
 - Xvfb (virtual display at :99, 1280x720x24)
 - fluxbox (window manager - needed for focus/raise)
 - `steer` CLI: GUI automation (screenshot, click, type, hotkey, clipboard, window list)

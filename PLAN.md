@@ -8,7 +8,7 @@ Turn the midget POC into a governance layer for multi-agent work. The POC proves
 
 ## What exists today
 
-- Docker container: Ubuntu 24.04 + Xvfb + fluxbox + xdotool + scrot
+- Docker container: Debian Bookworm Slim + Xvfb + fluxbox + xdotool + scrot
 - `steer` CLI wrapper: see, click, type, hotkey, scroll, apps, clipboard, screens
 - `test-poc.sh`: 10 end-to-end tests, all passing
 - Governance tooling (carried forward from thepit-v2): Makefile, darkcat pipeline, pitkeel, gauntlet, slopodar, lexicon, agent identity files

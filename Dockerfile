@@ -1,6 +1,6 @@
 # Midget POC — minimal Linux agent sandbox
 # Proves: Xvfb + xdotool + Python wrapper = steer-equivalent on Linux
-FROM ubuntu:24.04
+FROM debian:bookworm-slim
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV DISPLAY=:99
@@ -18,6 +18,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     wmctrl \
     x11-utils \
     xterm \
+    xfonts-base \
+    fonts-dejavu-core \
     tmux \
     tesseract-ocr \
     wget \

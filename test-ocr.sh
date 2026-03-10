@@ -46,8 +46,9 @@ fi
 
 # 3. OCR reads text from a known screen state
 echo "[3/3] OCR reads text from xterm with known content"
-# Launch xterm, type a unique string, wait for it to render, screenshot+OCR
-$STEER apps launch xterm --json >/dev/null 2>&1
+# Launch xterm with explicit TrueType font — bitmap default is too small for tesseract.
+# DejaVu Sans Mono is installed via fonts-dejavu-core; -fa/-fs selects XFT mode.
+$STEER apps launch xterm --args "-fa DejaVuSansMono -fs 14" --json >/dev/null 2>&1
 sleep 1
 # Click to focus, type the word, execute it (it echoes to terminal)
 $STEER click --x 640 --y 360 --json >/dev/null 2>&1

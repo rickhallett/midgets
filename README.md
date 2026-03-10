@@ -10,11 +10,11 @@ This project builds the infrastructure for agent swarms: multiple containerised 
 
 ## Concept - Proven
 
-A Docker container (Ubuntu 24.04 + Xvfb + fluxbox + xdotool + scrot) where an AI agent can see the screen, click, type, and control applications through a `steer` CLI wrapper. 10/10 tests passed.
+A Docker container (Debian Bookworm Slim + Xvfb + fluxbox + xdotool + scrot) where an AI agent can see the screen, click, type, and control applications through a `steer` CLI wrapper. 10/10 tests passed.
 
 ```
 midgets/
-├── Dockerfile          # Ubuntu 24.04, Xvfb, fluxbox, xdotool, scrot, xclip, wmctrl, tmux
+├── Dockerfile          # Debian Bookworm Slim, Xvfb, fluxbox, xdotool, scrot, xclip, wmctrl, tmux
 ├── entrypoint.sh       # Boots Xvfb virtual display at 1280x720x24, starts fluxbox WM
 ├── steer/steer         # Python CLI: see, click, type, hotkey, scroll, apps, clipboard, screens
 └── test-poc.sh         # 10-test end-to-end suite
