@@ -68,6 +68,17 @@ gate:
 	@echo "▶ Running job server test suite inside container..."
 	@docker run --rm $(MIDGET_IMAGE) /opt/test-jobs.sh
 
+# ── Interop ───────────────────────────────────────────────────
+#
+# C2: inter-container communication test.
+# Runs on the HOST — orchestrates two containers sharing a Docker volume.
+# Separate from gate (gate = single-container correctness).
+# Run before darkcat in full gauntlet.
+
+interop:
+	@echo "▶ Inter-container communication (C2)"
+	@bash test-c2.sh
+
 # ── Polecat Wrapper ───────────────────────────────────────────
 #
 # Observable, permission-safe, timeout-guarded.
@@ -262,7 +273,7 @@ ebook-clean:
 	rm -rf $(EBOOK_BUILD) $(EBOOK_SLIM_BUILD)
 	@echo "Ebook build directories cleared."
 
-.PHONY: all status graph clean install-hooks gate
+.PHONY: all status graph clean install-hooks gate interop
 .PHONY: ebook ebook-prep ebook-epub ebook-slim ebook-slim-prep ebook-slim-epub ebook-all ebook-clean
 .PHONY: darkcat darkcat-openai darkcat-gemini darkcat-all darkcat-synth darkcat-ref
-.PHONY: gauntlet gauntlet-gate gauntlet-pitkeel
+.PHONY: gauntlet gauntlet-gate gauntlet-interop gauntlet-pitkeel

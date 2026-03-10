@@ -22,6 +22,15 @@ gauntlet-gate:
 		exit 1; \
 	fi
 
+gauntlet-interop:
+	@echo "▶ Interop (C2)"
+	@if $(MAKE) interop; then \
+		$(PITCOMMIT) attest interop --tree $(TREE_FULL) --verdict pass; \
+	else \
+		$(PITCOMMIT) attest interop --tree $(TREE_FULL) --verdict fail; \
+		exit 1; \
+	fi
+
 gauntlet-pitkeel:
 	@echo "▶ Pitkeel signals"
 	@cd pitkeel && uv run python pitkeel.py
@@ -33,19 +42,25 @@ gauntlet:
 	@echo ""
 	@$(PITCOMMIT) tier --set $(TIER)
 	@if [ "$(TIER)" = "full" ]; then \
-		echo ""; echo "── 1/3 Gate ──"; echo ""; \
+		echo ""; echo "── 1/4 Gate ──"; echo ""; \
 	else \
 		echo ""; echo "── 1/2 Gate ──"; echo ""; \
 	fi
 	@$(MAKE) gauntlet-gate
 	@if [ "$(TIER)" = "full" ]; then \
 		echo ""; \
-		echo "── 2/3 Darkcat ──"; \
+		echo "── 2/4 Interop ──"; \
+		echo ""; \
+		$(MAKE) gauntlet-interop; \
+	fi
+	@if [ "$(TIER)" = "full" ]; then \
+		echo ""; \
+		echo "── 3/4 Darkcat ──"; \
 		echo ""; \
 		$(MAKE) darkcat-all; \
 	fi
 	@if [ "$(TIER)" = "full" ]; then \
-		echo ""; echo "── 3/3 Pitkeel ──"; \
+		echo ""; echo "── 4/4 Pitkeel ──"; \
 	else \
 		echo ""; echo "── 2/2 Pitkeel ──"; \
 	fi

@@ -75,3 +75,4 @@ A1: adapt the gate. Rewrite `make gate` to build the container and run `test-poc
 | A5 | 2026-03-10 | 7b39823 | Node.js + claude 2.1.72 in container, agent loop 4/4 passing. Gate: 29/29 |
 | B3 | 2026-03-10 | 550bcd2 | gauntlet wired: .env loaded, gate+pitkeel attest pass (TIER=wip) |
 | C1 | 2026-03-10 | 550bcd2 | jobrunner: shell_command task, YAML in/out, 5/5 passing. Gate: 34/34 |
+| C2 | 2026-03-10 | - | inter-container: shared volume, producer/consumer jobs, convergence check. Interop: 9/9. Gate: 34/34 |
