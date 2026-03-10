@@ -1,18 +1,8 @@
-+++
-title = "The Retrieval Problem"
-date = "2026-03-10"
-description = "Why agents need external knowledge. The naive RAG pipeline. Where it breaks. Retrieval quality metrics."
-tags = ["rag", "retrieval", "bootcamp"]
-step = 1
-tier = 1
-estimate = "3-4 hours"
-bootcamp = 5
-+++
+# Step 1: The Retrieval Problem
 
-Step 1 of 9 in Bootcamp V: Agent Infrastructure in Practice.
+**Why Agents Need External Knowledge and How to Get It Right**
 
----
-
+Step 1 of 9 in the Agent-Native Retrieval and Tool Use Bootcamp.
 Estimated total time: 3-4 hours.
 
 **Field maturity:** Established
@@ -1776,4 +1766,3 @@ vector spaces, similarity metrics, approximate nearest neighbor algorithms, and 
 databases. The concepts from this step - working set construction, retrieval quality
 metrics, failure mode identification - compose directly into the hands-on implementation
 in Step 2.
-

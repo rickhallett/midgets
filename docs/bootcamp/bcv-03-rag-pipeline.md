@@ -1,18 +1,8 @@
-+++
-title = "RAG Pipeline Engineering"
-date = "2026-03-10"
-description = "Chunking strategies, query processing, context assembly, citation, RAG evaluation."
-tags = ["rag", "pipeline", "engineering", "bootcamp"]
-step = 3
-tier = 1
-estimate = "5-6 hours"
-bootcamp = 5
-+++
+# Step 3: RAG Pipeline Engineering
 
-Step 3 of 9 in Bootcamp V: Agent Infrastructure in Practice.
+**Assembling Retrieval, Generation, and Everything Between**
 
----
-
+Step 3 of 9 in the Agent-Native Retrieval and Tool Use Bootcamp.
 Estimated total time: 5-6 hours.
 
 **Field maturity:** Established (core pipeline), Emerging (advanced query processing)
@@ -1588,4 +1578,3 @@ not enough. Hybrid search (BM25 + dense), cross-encoder reranking, parent docume
 retrieval, and multi-index strategies. These are the techniques that move a RAG system from
 "works on demos" to "works on real workloads." If your pipeline from the challenges has
 retrieval quality problems, Step 4 provides the tools to fix them.
-

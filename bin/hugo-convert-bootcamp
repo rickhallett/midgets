@@ -37,6 +37,12 @@ BOOTCAMP_META = {
     "subtitle": "Step {step} of 9 in Bootcamp IV: Evaluation & Adversarial Testing.",
     "total_steps": 9,
   },
+  5: {
+    "docs_prefix": "bcv-",
+    "hugo_prefix": "v-",
+    "subtitle": "Step {step} of 9 in Bootcamp V: Agent Infrastructure in Practice.",
+    "total_steps": 8,
+  },
 }
 
 
@@ -176,7 +182,11 @@ def convert_file(
 
 
 def build_file_mapping(bootcamp_num: int) -> list[tuple[Path, Path, str]]:
-  """Build the mapping between docs source files and Hugo targets."""
+  """Build the mapping between docs source files and Hugo targets.
+
+  Matches docs to Hugo stubs by step number extracted from front matter.
+  Hugo stubs without a matching doc are skipped (left as stubs).
+  """
   meta = BOOTCAMP_META[bootcamp_num]
   docs_prefix = meta["docs_prefix"]
   hugo_prefix = meta["hugo_prefix"]
@@ -185,22 +195,30 @@ def build_file_mapping(bootcamp_num: int) -> list[tuple[Path, Path, str]]:
   docs_files = sorted(DOCS_DIR.glob(f"{docs_prefix}*.md"))
   hugo_files = sorted(HUGO_DIR.glob(f"{hugo_prefix}*.md"))
 
+  if len(docs_files) == 0:
+    printf_err(f"No docs files found with prefix '{docs_prefix}'")
+    sys.exit(1)
+
   if len(docs_files) != meta["total_steps"]:
     printf_err(
       f"Expected {meta['total_steps']} docs files, found {len(docs_files)}"
     )
     sys.exit(1)
 
-  if len(hugo_files) != meta["total_steps"]:
-    printf_err(
-      f"Expected {meta['total_steps']} Hugo stubs, found {len(hugo_files)}"
-    )
-    sys.exit(1)
+  # Index Hugo stubs by step number
+  hugo_by_step: dict[int, Path] = {}
+  for hp in hugo_files:
+    _, info = extract_front_matter(hp)
+    hugo_by_step[info["step"]] = hp
 
+  # Match docs to stubs positionally (docs are step 1..N in sorted order)
   mappings = []
-  for docs_path, hugo_path in zip(docs_files, hugo_files):
-    _, info = extract_front_matter(hugo_path)
-    subtitle = subtitle_tpl.format(step=info["step"])
+  for i, docs_path in enumerate(docs_files, start=1):
+    if i not in hugo_by_step:
+      printf_err(f"No Hugo stub with step={i} for {docs_path.name}")
+      sys.exit(1)
+    hugo_path = hugo_by_step[i]
+    subtitle = subtitle_tpl.format(step=i)
     mappings.append((docs_path, hugo_path, subtitle))
 
   return mappings

@@ -1,15 +1,9 @@
-+++
-title = "State Management for Agents"
-date = "2026-03-10"
-description = "Stateless to stateful. Filesystem as state. State backends. Schema design. Concurrency."
-tags = ["state", "management", "bootcamp"]
-step = 5
-tier = 2
-estimate = "4-5 hours"
-bootcamp = 5
-+++
+# Step 5: State Management for Agents - From Amnesia to Continuity
 
-Step 5 of 9 in Bootcamp V: Agent Infrastructure in Practice.
+**Estimated time:** 4-5 hours
+**Field maturity:** Emerging
+**Prerequisites:** **Bootcamp I Step 3 (filesystem as state)**, Step 4 (context engineering)
+**Leads to:** Step 6 (conversation memory and session persistence)
 
 ---
 
@@ -2348,4 +2342,3 @@ memory: buffer vs summary vs window strategies, memory compression as lossy enco
 the interaction between memory management and context window pressure, and the open
 problem of selective erasure (GDPR Article 17 applied to agent memory). Step 6 builds
 directly on the state backends, schema design, and durable write patterns from this step.
-

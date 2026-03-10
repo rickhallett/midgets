@@ -1,15 +1,10 @@
-+++
-title = "Agent Observability and Tracing"
-date = "2026-03-10"
-description = "Traces, spans, structured logging. OpenTelemetry for LLM. Custom tracing. Alert fatigue."
-tags = ["observability", "tracing", "monitoring", "bootcamp"]
-step = 7
-tier = 3
-estimate = "4-5 hours"
-bootcamp = 5
-+++
+# Step 7: Agent Observability and Tracing
 
-Step 7 of 9 in Bootcamp V: Agent Infrastructure in Practice.
+**Estimated time:** 4-5 hours
+**Field maturity:** Emerging
+**Prerequisites:** **Bootcamp I Step 8 (process observation)**, **Bootcamp II Step 9 (failure modes)**, Step 5 (state management), Step 6 (multi-step agents)
+**Leads to:** Step 8 (debugging agent systems), Step 9 (production patterns)
+**You will need:** Python 3.10+, DuckDB (`uv pip install duckdb`), a working agent from Step 6 exercises (or the minimal agent scaffold provided in Tool Setup)
 
 ---
 
@@ -2087,4 +2082,3 @@ debugging tells you why. Step 8 covers systematic diagnosis using the layer mode
 for non-deterministic systems, and failure classification for agent-specific error
 types. The traces you learned to produce and query in this step become the primary
 evidence for the debugging process in Step 8.
-

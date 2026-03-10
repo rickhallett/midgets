@@ -1,18 +1,8 @@
-+++
-title = "Conversation Memory and Session Persistence"
-date = "2026-03-10"
-description = "Memory patterns (full, sliding window, summary, entity, retrieval-augmented). Selective forgetting."
-tags = ["memory", "conversation", "persistence", "bootcamp"]
-step = 6
-tier = 2
-estimate = "4-5 hours"
-bootcamp = 5
-+++
+# Step 6: Conversation Memory and Session Persistence
 
-Step 6 of 9 in Bootcamp V: Agent Infrastructure in Practice.
+**The Engineering of Remembering and Forgetting**
 
----
-
+Step 6 of 9 in the Agent-Native Retrieval and Tool Use Bootcamp.
 Estimated total time: 4-5 hours.
 
 **Field maturity:** Emerging/Frontier
@@ -1431,4 +1421,3 @@ covers how to observe it in operation: tracing LLM calls and token usage, monito
 memory strategy performance, detecting when summarisation drops critical facts, and
 measuring retrieval quality in production. The memory evaluation framework from this
 step becomes the basis for production monitoring.
-

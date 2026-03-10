@@ -1,18 +1,8 @@
-+++
-title = "Advanced Retrieval Patterns"
-date = "2026-03-10"
-description = "Hybrid search, reranking, agentic RAG, GraphRAG, code retrieval, index maintenance."
-tags = ["rag", "hybrid", "reranking", "bootcamp"]
-step = 4
-tier = 1
-estimate = "4-5 hours"
-bootcamp = 5
-+++
+# Step 4: Advanced Retrieval Patterns
 
-Step 4 of 9 in Bootcamp V: Agent Infrastructure in Practice.
+**When the Standard Pipeline Is Not Enough**
 
----
-
+Step 4 of 9 in the Agent-Native Retrieval and Tool Use Bootcamp.
 Estimated total time: 4-5 hours.
 
 **Field maturity:** Emerging
@@ -1886,4 +1876,3 @@ The metrics from Step 3 (precision, recall, MRR) become the monitoring targets. 
 index health checks from Section 6 become production dashboards. If you add any pattern
 from this step to a production system, Step 7 tells you how to know whether it is
 working.
-

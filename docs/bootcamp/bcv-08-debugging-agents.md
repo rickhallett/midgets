@@ -1,15 +1,10 @@
-+++
-title = "Debugging Agent Systems"
-date = "2026-03-10"
-description = "Replay debugging, failure classification, diagnosis by layer, common patterns, post-mortems."
-tags = ["debugging", "diagnosis", "bootcamp"]
-step = 8
-tier = 3
-estimate = "4-5 hours"
-bootcamp = 5
-+++
+# Step 8: Debugging Agent Systems - From Traces to Root Causes
 
-Step 8 of 9 in Bootcamp V: Agent Infrastructure in Practice.
+**Estimated time:** 4-5 hours
+**Field maturity:** Emerging/Frontier
+**Prerequisites:** Step 5 (state management), Step 7 (observability and tracing), **Bootcamp II Step 9 (failure modes)**
+**Leads to:** Step 9 (production patterns)
+**You will need:** Python 3.10+, DuckDB (`uv pip install duckdb`), traces from Step 7 exercises (or the sample traces provided in Tool Setup)
 
 ---
 
@@ -2502,4 +2497,3 @@ constraints. Rate limiting, cost management, graceful degradation, deployment st
 monitoring dashboards. The debugging skills from this step become your incident response
 toolkit. The traces become your production audit trail. The failure classification becomes
 your incident categorization scheme.
-

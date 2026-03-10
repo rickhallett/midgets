@@ -1,18 +1,8 @@
-+++
-title = "Embeddings and Vector Search"
-date = "2026-03-10"
-description = "Dense vector representations, similarity metrics, vector databases, indexing strategies."
-tags = ["embeddings", "vector", "search", "bootcamp"]
-step = 2
-tier = 1
-estimate = "4-5 hours"
-bootcamp = 5
-+++
+# Step 2: Embeddings and Vector Search
 
-Step 2 of 9 in Bootcamp V: Agent Infrastructure in Practice.
+**The Machinery Under Semantic Retrieval**
 
----
-
+Step 2 of 9 in the Agent-Native Retrieval and Tool Use Bootcamp.
 Estimated total time: 4-5 hours.
 
 **Field maturity:** Established
@@ -1912,4 +1902,3 @@ also introduces the retrieval-generation boundary: when the retrieval is good bu
 generation is wrong, and vice versa. The metrics from Step 1 and the embedding
 understanding from this step are prerequisites for diagnosing which side of that boundary
 your failures are on.
-
