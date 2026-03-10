@@ -176,6 +176,14 @@ maps to an `init` service with `restart: no` that completes before the worker se
 start. Skipping it causes silent permission failures - the jobrunner exits non-zero but
 the error is easy to miss if container stdout is suppressed.
 
+**Job contention (C3, 2026-03-10).** When N workers race for jobs in `incoming/`,
+naive `glob + read + unlink` causes contention: multiple workers grab the same file,
+one processes it, the rest fail or silently skip. The fix is atomic acquisition via
+`os.rename()` to a `.processing` suffix before reading. `os.rename()` is atomic on
+Linux - if two workers race, exactly one succeeds and the other gets
+`FileNotFoundError`. The loser moves to the next file. This pattern is required for
+any `--once` or `watch` mode with concurrent workers.
+
 ---
 
 ## What Would Prove the Thesis

@@ -79,6 +79,19 @@ interop:
 	@echo "▶ Inter-container communication (C2)"
 	@bash test-c2.sh
 
+# ── Swarm ─────────────────────────────────────────────────────
+#
+# C3: multi-container orchestration test.
+# Docker Compose: init service + N workers sharing a volume.
+# Dispatches N jobs, workers process one each, results collected.
+# Usage: make swarm N=3
+
+N ?= 3
+
+swarm:
+	@echo "▶ Multi-container orchestration (C3) — N=$(N)"
+	@N=$(N) bash test-c3.sh
+
 # ── Polecat Wrapper ───────────────────────────────────────────
 #
 # Observable, permission-safe, timeout-guarded.
@@ -273,7 +286,7 @@ ebook-clean:
 	rm -rf $(EBOOK_BUILD) $(EBOOK_SLIM_BUILD)
 	@echo "Ebook build directories cleared."
 
-.PHONY: all status graph clean install-hooks gate interop
+.PHONY: all status graph clean install-hooks gate interop swarm
 .PHONY: ebook ebook-prep ebook-epub ebook-slim ebook-slim-prep ebook-slim-epub ebook-all ebook-clean
 .PHONY: darkcat darkcat-openai darkcat-gemini darkcat-all darkcat-synth darkcat-ref
-.PHONY: gauntlet gauntlet-gate gauntlet-interop gauntlet-pitkeel
+.PHONY: gauntlet gauntlet-gate gauntlet-interop gauntlet-swarm gauntlet-pitkeel

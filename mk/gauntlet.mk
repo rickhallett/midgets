@@ -31,6 +31,15 @@ gauntlet-interop:
 		exit 1; \
 	fi
 
+gauntlet-swarm:
+	@echo "▶ Swarm (C3)"
+	@if $(MAKE) swarm; then \
+		$(PITCOMMIT) attest swarm --tree $(TREE_FULL) --verdict pass; \
+	else \
+		$(PITCOMMIT) attest swarm --tree $(TREE_FULL) --verdict fail; \
+		exit 1; \
+	fi
+
 gauntlet-pitkeel:
 	@echo "▶ Pitkeel signals"
 	@cd pitkeel && uv run python pitkeel.py
@@ -42,25 +51,31 @@ gauntlet:
 	@echo ""
 	@$(PITCOMMIT) tier --set $(TIER)
 	@if [ "$(TIER)" = "full" ]; then \
-		echo ""; echo "── 1/4 Gate ──"; echo ""; \
+		echo ""; echo "── 1/5 Gate ──"; echo ""; \
 	else \
 		echo ""; echo "── 1/2 Gate ──"; echo ""; \
 	fi
 	@$(MAKE) gauntlet-gate
 	@if [ "$(TIER)" = "full" ]; then \
 		echo ""; \
-		echo "── 2/4 Interop ──"; \
+		echo "── 2/5 Interop ──"; \
 		echo ""; \
 		$(MAKE) gauntlet-interop; \
 	fi
 	@if [ "$(TIER)" = "full" ]; then \
 		echo ""; \
-		echo "── 3/4 Darkcat ──"; \
+		echo "── 3/5 Swarm ──"; \
+		echo ""; \
+		$(MAKE) gauntlet-swarm; \
+	fi
+	@if [ "$(TIER)" = "full" ]; then \
+		echo ""; \
+		echo "── 4/5 Darkcat ──"; \
 		echo ""; \
 		$(MAKE) darkcat-all; \
 	fi
 	@if [ "$(TIER)" = "full" ]; then \
-		echo ""; echo "── 4/4 Pitkeel ──"; \
+		echo ""; echo "── 5/5 Pitkeel ──"; \
 	else \
 		echo ""; echo "── 2/2 Pitkeel ──"; \
 	fi
