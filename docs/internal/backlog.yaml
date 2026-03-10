@@ -67,9 +67,9 @@
   reason: 'Deferred: dates set on 16 drafts (2026-03-16 through 2026-03-31) but no
     automated publish mechanism yet'
 - id: BL-008
-  title: 'Analyst dispatch: portfolio value left on table after pivot to midgets. The
-    thepit-v2 darkcat alley pipeline produced triangulation data + fix commits but
-    human QA pass was never completed. What did ALL three models miss? Fix quality
+  title: 'Analyst dispatch: portfolio value left on table after pivot to midgets.
+    The thepit-v2 darkcat alley pipeline produced triangulation data + fix commits
+    but human QA pass was never completed. What did ALL three models miss? Fix quality
     metrics (pre-QA vs post-QA delta) never computed. Numeric comparison data exists
     for richer visualisations (hex.tech/pynb). Dispatch analyst to assess: (1) what
     signal remains in the unfinished QA data, (2) what cross-model blind spots the
@@ -112,3 +112,13 @@
   created: '2026-03-10T12:00:00+00:00'
   closed: null
   reason: 'Parked: complexity vs marginal gain. See docs/field-notes/2026-03-10-slopmop-pipe-filter-exploration.md'
+- id: BL-010
+  title: Evaluate debian:bookworm-slim or wolfi as midget base image
+  status: open
+  priority: medium
+  tags:
+  - infra
+  epic: null
+  created: '2026-03-10T11:55:31.653612+00:00'
+  closed: null
+  reason: null
