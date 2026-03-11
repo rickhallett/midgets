@@ -322,6 +322,11 @@ These are the named patterns caught in the wild. If you recognise them in your o
 - **demographic bake-in** - baseline demographic unstated, so "human" means "this demographic"
 - **monoculture analysis** - all layers use same model, producing correlated blind spots
 - **not wrong** - passes all checks but isn't right; "the metrics say it's fine" but human recoils
+- **convergence theatre** - presenting correlated model agreement as independent validation; same priors = same blind spots
+
+**Cross-model sweep patterns (2026-03-11, tertiary tier):**
+- **maturity theatre** - capitalized tier labels (EMERGING, FRONTIER) performing industry categorization that does not exist
+- **provenance theatre** - boilerplate LLM disclaimer blocks performing caution without addressing content quality
 
 ---
 
