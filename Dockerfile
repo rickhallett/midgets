@@ -22,6 +22,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     fonts-dejavu-core \
     tmux \
     tesseract-ocr \
+    x11vnc \
     wget \
     python3 \
     python3-pip \
@@ -30,10 +31,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     procps \
     && rm -rf /var/lib/apt/lists/*
 
-# Node.js + agent CLIs — multi-model agent framework
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    nodejs \
-    npm \
+# Node.js 22 LTS + agent CLIs — multi-model agent framework
+# Debian apt ships Node 18 which is EOL and breaks Gemini CLI (needs v regex flag from Node 20+).
+# NodeSource provides current LTS.
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates curl gnupg \
+    && mkdir -p /etc/apt/keyrings \
+    && curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key \
+        | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg \
+    && echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_22.x nodistro main" \
+        > /etc/apt/sources.list.d/nodesource.list \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends nodejs \
     && npm install -g \
         @anthropic-ai/claude-code \
         @openai/codex \

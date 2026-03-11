@@ -36,6 +36,18 @@ if ! kill -0 $FLUXBOX_PID 2>/dev/null; then
     exit 1
 fi
 
+# Start VNC server if MIDGET_VNC is set (exposes display on port 5900)
+if [ -n "$MIDGET_VNC" ]; then
+    x11vnc -display :99 -forever -nopw -shared -rfbport 5900 >>"$MIDGET_LOG" 2>&1 &
+    X11VNC_PID=$!
+    sleep 0.3
+    if kill -0 $X11VNC_PID 2>/dev/null; then
+        echo "Midget VNC ready on port 5900"
+    else
+        echo "WARNING: x11vnc failed to start" >&2
+    fi
+fi
+
 echo "Midget display ready — ${SCREEN_WIDTH}x${SCREEN_HEIGHT}x${SCREEN_DEPTH} on :99"
 
 # If arguments provided, run them; otherwise interactive shell

@@ -16,6 +16,8 @@ Turn the midget POC into a governance layer for multi-agent work. The POC proves
 - 3 integration test suites (24 tests): test-c2, test-c3, test-c4
 - Docker Compose swarm with N workers and shared volumes
 - Governance crew plumbing: role identities, mount constraints (ro/rw), orchestrator, docker inspect verification
+- Cross-model crew orchestration: Gemini 2.5 Flash, Grok 3 Mini Fast, GPT-4.1 Mini (Claude excluded from review - it wrote the code)
+- Node 22 LTS in container (upgraded from Debian apt Node 18 to support Gemini CLI)
 - Adversarial review prompt and 2-model convergence synthesis (12 converged findings, all fixed)
 - Governance tooling (carried forward from thepit-v2): Makefile, darkcat pipeline, pitkeel, gauntlet, slopodar, lexicon, agent identity files
 
@@ -55,17 +57,18 @@ Multiple midgets working together under governance.
 | C3 | Multi-container orchestration | Spin up N midgets, dispatch work, collect results. Docker Compose or k3s. The orchestrator is the Operator's control plane. | C1, C2 | `make swarm N=3 TASK=test` spins up 3 midgets, distributes work, collects results |
 | C4 | Governance crew as physical agents | Weaver, Watchdog, Sentinel as actual containerised agents. Weaver reviews PRs by reading diffs inside its container. Watchdog writes and runs tests. Sentinel scans for security issues. Each has its own midget, its own identity file, its own steer instance. | C3, B3 | A code change goes through: dev-midget implements, watchdog-midget tests, weaver-midget reviews, sentinel-midget scans. All automated, all containerised. |
 
-### Phase D - Adversarial proof and thesis validation
+### Phase D - Adversarial proof and thesis validation [D3 DONE, D4 NEXT]
 
 The plumbing is built. This phase proves it works under adversarial conditions. Each step
-has a built-in adversarial review gate. The thesis is not proven until D3 passes.
+has a built-in adversarial review gate.
 
-| # | Step | What it does | Depends on | Adversarial gate | Verifiable by |
-|---|------|-------------|------------|-----------------|---------------|
-| D1 | Live agent run | A real Claude Code agent inside a midget completes a non-trivial task (not a canned script). The agent uses steer, drive, and the job protocol to produce a working diff. | C4 + API key | R1: review the diff the agent produces using repo-adversarial-review.md. Does the agent's output pass the same bar as human output? | Agent produces a diff that passes the gate. Human reviews the diff for correctness. |
-| D2 | Defect injection | Inject a realistic defect into the dev-midget's output (shadow validation, off-by-one, wrong error type - not trivial). Run the full crew pipeline. The watchdog and weaver must catch it independently. | D1 | R2: 2-model adversarial review of the crew's findings. Did they catch the right defect for the right reason, or phantom-tollbooth it? | Watchdog test catches defect. Weaver review flags defect. Neither was told what the defect is. Sentinel reports clean (true negative). Orchestrator verdict = FAIL with correct location. |
-| D3 | Thesis proof scenario | The full EVAL.md scenario end-to-end: dev-midget produces diff with injected defect, crew catches it, orchestrator escalates, human confirms. Zero human intervention between injection and verdict. This is the thesis proof. | D2 | R3: 3-model triangulation (Darkcat Alley) on the full pipeline artifacts. Cross-check: do the crew's findings converge? Do independent models agree on the verdict? | All EVAL.md success criteria met. Full pipeline artifacts committed. Convergence metrics from bin/triangulate. |
-| D4 | Write-up | Document the proof: what was built, what was proven, what the failure modes are, what the confounds are. This is the HN post material and the Anthropic portfolio piece. | D3 | R4: adversarial review of the write-up itself against slopodar. Does it claim more than was proven? Does it omit confounds? | Write-up reviewed by Operator. No slopodar patterns detected. Claims match evidence. |
+| # | Step | What it does | Depends on | Adversarial gate | Verifiable by | Status |
+|---|------|-------------|------------|-----------------|---------------|--------|
+| D1 | Live agent run | A real Claude Code agent inside a midget completes a non-trivial task (not a canned script). The agent uses steer, drive, and the job protocol to produce a working diff. | C4 + API key | R1: review the diff the agent produces using repo-adversarial-review.md. Does the agent's output pass the same bar as human output? | Agent produces a diff that passes the gate. Human reviews the diff for correctness. | DONE |
+| D2 | Defect injection (v1: trivial, retired) | First attempt used off-by-one with self-documenting BUG comment. All 3 Claudes caught it - not interesting. Retired as slop. | D1 | -- | -- | RETIRED |
+| D2 | Defect injection (v2: zip truncation) | Inject silent data-loss defect (zip truncation in weighted_score). No BUG comment, produces correct output for equal-length inputs, wrong answer for mismatched. Run cross-model crew. | D1 | Crew must find the bug for the right reason, not phantom-tollbooth it. | 3/3 models found zip truncation independently. Sentinel PASS is correct (security scope). | DONE |
+| D3 | Cross-model thesis proof | Full EVAL.md scenario with 3 vendors (Gemini, Grok, GPT-4.1). Claude excluded - it wrote the code. Zero human intervention. Verdict divergence (2 FAIL, 1 PASS) is the system working correctly. | D2 | Cross-model convergence on the injected bug. Divergence on verdict reflects correct role scoping. | All EVAL.md confounds addressed. Artifacts committed. | DONE |
+| D4 | Write-up | Document the proof: what was built, what was proven, what the failure modes are, what the confounds are. This is the HN post material and the Anthropic portfolio piece. | D3 | R4: adversarial review of the write-up itself against slopodar. Does it claim more than was proven? Does it omit confounds? | Write-up reviewed by Operator. No slopodar patterns detected. Claims match evidence. | NEXT |
 
 ## Adversarial review cadence
 
@@ -80,6 +83,8 @@ Built into the workflow, not bolted on after.
 
 **Completed reviews:**
 - 2026-03-10: R1 (Claude Opus) + R2 (Pi Coding Agent) = 36 findings, 12 converged, 12/12 fixed. Data: `data/alley/repo-review-2026-03-10/`
+- 2026-03-11: D2v1 (3x Claude, trivial defect) = retired as slop. Data: `data/alley/crew-live-2026-03-11-093741/`
+- 2026-03-11: D3 (Gemini + Grok + GPT-4.1, zip truncation) = 3/3 found bug, 2 FAIL 1 PASS (correct divergence). Data: `data/alley/crew-live-2026-03-11-095825/`
 
 ## Sequencing notes
 
@@ -113,3 +118,7 @@ A1: adapt the gate. Rewrite `make gate` to build the container and run `test-poc
 | C4 | 2026-03-10 | 4476897 | crew: role identities, mount constraints (ro/rw), orchestrator, docker inspect proof. C4: 10/10. Gate: 35/35. Live run: 3/3 FAIL verdicts on injected off-by-one. Thesis proof complete. |
 | -- | 2026-03-10 | 3238f9e | Adversarial review R1+R2: 12/12 convergence fixes applied. Gate: 35/35 |
 | -- | 2026-03-10 | a88cecb | Review artifacts committed: prompt, R1, convergence synthesis |
+| D1 | 2026-03-11 | c353af0 | Live `make crew` with ANTHROPIC_API_KEY. 3 Claude agents ran inside containers with role-specific mount constraints. |
+| D2v1 | 2026-03-11 | c353af0 | RETIRED. Off-by-one with BUG comment. Trivial defect, monoculture (3x Claude). Not credible. |
+| D2v2 | 2026-03-11 | -- | zip truncation defect (silent wrong answer, no hint). Single-model baseline run (all Claude). |
+| D3 | 2026-03-11 | -- | Cross-model crew: Gemini (watchdog), Grok (weaver), GPT-4.1 (sentinel). 3/3 found zip bug. Verdict: 2 FAIL, 1 PASS (sentinel correctly scoped to security). EVAL.md confounds addressed: non-trivial defect, 3 vendors, Claude excluded. |

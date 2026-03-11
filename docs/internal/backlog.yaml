@@ -122,3 +122,12 @@
   created: '2026-03-10T11:55:31.653612+00:00'
   closed: null
   reason: null
+- id: BL-011
+  title: capture and pipe used tokens for midgets back for observation
+  status: open
+  priority: medium
+  tags: []
+  epic: null
+  created: '2026-03-11T09:22:33.022298+00:00'
+  closed: null
+  reason: null
