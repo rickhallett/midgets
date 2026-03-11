@@ -60,6 +60,7 @@ hardening that has not been done.
 - [Inter-Container Communication](docs/diagrams/inter-container.md) - shared volumes, job protocol, atomic acquisition
 - [Governance Crew](docs/diagrams/governance-crew.md) - mount constraints, role separation, crew run results
 - [Full Gauntlet](docs/diagrams/gauntlet.md) - 6-stage verification pipeline
+- [Audit Trail](docs/diagrams/audit-trail.md) - per-agent action traces, what is captured and why
 
 Terminal diagrams: `bin/diagrams [stack|gate|interop|crew|gauntlet|all]`
 
