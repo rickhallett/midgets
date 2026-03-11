@@ -61,12 +61,12 @@ RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd6
 # Steer wrapper
 COPY steer/ /opt/steer/
 COPY entrypoint.sh /opt/entrypoint.sh
-COPY test-poc.sh /opt/test-poc.sh
-COPY test-drive.sh /opt/test-drive.sh
-COPY test-ocr.sh /opt/test-ocr.sh
-COPY test-chromium.sh /opt/test-chromium.sh
-COPY test-agent.sh /opt/test-agent.sh
-COPY test-jobs.sh /opt/test-jobs.sh
+COPY tests/test-poc.sh /opt/test-poc.sh
+COPY tests/test-drive.sh /opt/test-drive.sh
+COPY tests/test-ocr.sh /opt/test-ocr.sh
+COPY tests/test-chromium.sh /opt/test-chromium.sh
+COPY tests/test-agent.sh /opt/test-agent.sh
+COPY tests/test-jobs.sh /opt/test-jobs.sh
 # Neuter fbsetbg - fluxbox calls it on startup to set wallpaper,
 # but no wallpaper setter is installed, causing an xmessage popup.
 RUN printf '#!/bin/sh\nexit 0\n' > /usr/bin/fbsetbg

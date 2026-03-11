@@ -77,7 +77,7 @@ gate:
 
 interop:
 	@echo "▶ Inter-container communication (C2)"
-	@bash test-c2.sh
+	@bash tests/test-c2.sh
 
 # ── Swarm ─────────────────────────────────────────────────────
 #
@@ -90,7 +90,7 @@ N ?= 3
 
 swarm:
 	@echo "▶ Multi-container orchestration (C3) — N=$(N)"
-	@N=$(N) bash test-c3.sh
+	@N=$(N) bash tests/test-c3.sh
 
 # ── Crew ──────────────────────────────────────────────────────
 #
@@ -103,7 +103,7 @@ swarm:
 
 crew-test:
 	@echo "▶ Governance crew plumbing (C4 — deterministic)"
-	@bash test-c4.sh
+	@bash tests/test-c4.sh
 
 crew:
 	@echo "▶ Live crew orchestration (cross-model, costs API calls)"

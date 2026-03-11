@@ -109,7 +109,7 @@ steer/jobrunner         Job server (YAML in/out, atomic acquisition)
 crew/                   Role identity files (dev, watchdog, weaver, sentinel)
 orchestrate.sh          Live crew orchestrator
 docker-compose.yaml     Swarm definition (init + N workers)
-test-*.sh               35 tests across 6 suites + 3 integration suites
+tests/                  All test suites (35 in-container + 3 host-side integration)
 SPEC.md                 What a midget is, governance crew, interfaces
 PLAN.md                 Build trajectory, completed table
 docs/diagrams/          Architecture diagrams with commentary
