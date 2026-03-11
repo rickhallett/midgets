@@ -1,55 +1,106 @@
 # Midgets
 
-> Agent-native Linux containers for autonomous software engineering.
+> Governance-by-infrastructure for multi-agent engineering.
 
 ## What This Is
 
-A Docker container is an agent's workspace. The agent boots into its own Linux environment, sees the screen, clicks, types, and operates software through a CLI wrapper.
+AI agents running inside Docker containers with infrastructure-enforced role
+constraints. A Watchdog that cannot modify source code (mount flag, not prompt).
+A Sentinel that gets a read-only diff (kernel enforcement, not policy). A Weaver
+that reviews but cannot merge (no credentials in container).
 
-This project builds the infrastructure for agent swarms: multiple containerised agents, each with a defined role, operating in parallel on composable units of software.
+The thesis: governance controls that currently exist only as prompts and process
+can be made structural using containerised agents. The container boundary IS the
+governance boundary.
 
-## Concept - Proven
+**Status:** Thesis proven. All three phases complete. See [PLAN.md](PLAN.md) for
+the full build trajectory and completed table.
 
-A Docker container (Debian Bookworm Slim + Xvfb + fluxbox + xdotool + scrot) where an AI agent can see the screen, click, type, and control applications through a `steer` CLI wrapper. 10/10 tests passed.
+## Architecture
+
+- [Container Stack](docs/diagrams/container-stack.md) - what lives inside every midget
+- [Quality Gate](docs/diagrams/quality-gate.md) - 35 deterministic tests, 6 suites
+- [Inter-Container Communication](docs/diagrams/inter-container.md) - shared volumes, job protocol, atomic acquisition
+- [Governance Crew](docs/diagrams/governance-crew.md) - the thesis proof: infrastructure-enforced role constraints
+- [Full Gauntlet](docs/diagrams/gauntlet.md) - 6-stage verification pipeline
+
+Terminal diagrams: `bin/diagrams [stack|gate|interop|crew|gauntlet|all]`
+
+## Make Targets
 
 ```
-midgets/
-├── Dockerfile          # Debian Bookworm Slim, Xvfb, fluxbox, xdotool, scrot, xclip, wmctrl, tmux
-├── entrypoint.sh       # Boots Xvfb virtual display at 1280x720x24, starts fluxbox WM
-├── steer/steer         # Python CLI: see, click, type, hotkey, scroll, apps, clipboard, screens
-└── test-poc.sh         # 10-test end-to-end suite
+make gate              35 tests inside the container (deterministic)
+make interop           2-container handoff via shared volume
+make swarm N=3         N workers via Docker Compose
+make crew-test         mount constraint proof (deterministic)
+make crew              live LLM crew run (requires ANTHROPIC_API_KEY)
+make gauntlet          full 6-stage verification pipeline
+make status            phase completion overview
+bin/diagrams           terminal architecture diagrams
 ```
 
-## The Thesis
+## The Thesis Proof
 
-On Linux, you create bespoke, minimal, agent-native software. The machine is the agent's sandbox.
+On 2026-03-10, `make crew` ran against a Python file with a deliberate
+off-by-one defect. Three containerised agents reviewed independently:
 
-1. **Agent-native software** - text interfaces, composable primitives, structured feedback. Built for agents, not adapted from human GUI apps.
-2. **Operational training** - through trial and error, the human-agent system develops custom conventions that compound over time. Distinct from ML training. The conventions are the primary output.
-3. **Linux as agent OS** - Linux never abandoned the CLI. Every GUI is optional. The system is fully operable from a terminal.
+- **Watchdog**: 13 tests, 6 failed. Verdict: FAIL.
+- **Weaver**: 4 findings, primary defect on line 4. Verdict: FAIL.
+- **Sentinel**: 1 vulnerability (DoS via ZeroDivisionError). Verdict: FAIL.
+- **Triangulated verdict**: FAIL (3/3 converged on same defect).
+- `docker inspect` confirmed `/opt/repo` RW=false on all reviewer containers.
 
-## Roadmap
+Three frames (empirical, engineering, adversarial), one defect, zero
+coordination between agents. The governance constraint was enforced by
+Docker mount flags, not by system prompts.
 
-- [x] Container POC (Xvfb + steer wrapper, 10/10)
-- [ ] OCR (tesseract)
-- [ ] Chromium
-- [ ] Drive port (tmux sentinel protocol from mac-mini-agent)
-- [ ] Listen port (job server)
-- [ ] Agent framework in container (Pi or Claude Code)
-- [ ] Multi-container orchestration
-- [ ] Governance crew as physical agents
+See [Governance Crew](docs/diagrams/governance-crew.md) for the full diagram
+and commentary.
+
+## Project Structure
+
+```
+Dockerfile              Debian Bookworm Slim, all dependencies
+entrypoint.sh           Xvfb + fluxbox startup
+steer/steer             GUI automation CLI (Python, wraps xdotool/scrot/wmctrl)
+steer/drive             Terminal automation CLI (Python, wraps tmux)
+steer/jobrunner         Job server (YAML in/out, atomic acquisition)
+crew/                   Role identity files (dev, watchdog, weaver, sentinel)
+orchestrate.sh          Live crew orchestrator
+docker-compose.yaml     Swarm definition (init + N workers)
+test-poc.sh             11 tests - GUI automation
+test-drive.sh            9 tests - terminal automation
+test-ocr.sh              3 tests - OCR pipeline
+test-chromium.sh         3 tests - browser in container
+test-agent.sh            4 tests - agent framework skeleton
+test-jobs.sh             5 tests - job protocol
+test-c2.sh               9 tests - inter-container handoff
+test-c3.sh               7 tests - swarm orchestration
+test-c4.sh              10 tests - mount constraints + crew plumbing
+SPEC.md                 What a midget is, governance crew, interfaces
+EVAL.md                 Success/failure criteria, thesis proof scenario
+PLAN.md                 Build trajectory, completed table
+docs/decisions/         Session decisions (SD-322 onwards)
+docs/diagrams/          Architecture diagrams with commentary
+```
 
 ## Infrastructure
 
-**Development machine:** Ryzen 7 6800H, 32GB RAM, Arch Linux. Runs 3-5 midget containers.
+**Development:** Ryzen 7 6800H, 32GB RAM, Arch Linux.
 
-**Target cluster:** 6× HP ProDesk 400 G4 Mini (i5-8500T, 16GB, 256GB SSD) on a 2.5GbE switch. k3s. Mixed distros. £80-150 per node from eBay.
+**Target cluster:** 6x HP ProDesk 400 G4 Mini (i5-8500T, 16GB, 256GB SSD)
+on 2.5GbE switch. k3s. Mixed distros.
 
 ## Provenance
 
-Carries forward from [thepit-v2](https://github.com/rickhallett/thepit-v2), where the governance system and research artifacts were developed during a month-long agentic engineering study. The product code is archived on the `phase2` branch. The governance, anti-pattern taxonomy, and context engineering vocabulary are the outputs that carried forward.
+Carries forward from [thepit-v2](https://github.com/rickhallett/thepit-v2),
+where the governance system was developed during a month-long agentic
+engineering study. The governance vocabulary, anti-pattern taxonomy
+([slopodar](slopodar-v2.yaml)), and context engineering model are the
+outputs that carried forward.
 
-**Operator:** Richard Hallett · [OCEANHEART.AI LTD](https://oceanheart.ai) · UK company 16029162
+**Operator:** Richard Hallett - [OCEANHEART.AI LTD](https://oceanheart.ai) -
+UK company 16029162
 
 ## License
 
