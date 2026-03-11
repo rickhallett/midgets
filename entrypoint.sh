@@ -48,7 +48,12 @@ if [ -n "$MIDGET_VNC" ]; then
     fi
 fi
 
-echo "Midget display ready — ${SCREEN_WIDTH}x${SCREEN_HEIGHT}x${SCREEN_DEPTH} on :99"
+# Set window title to agent role if provided (visible in VNC toolbar)
+if [ -n "$MIDGET_ROLE" ]; then
+    xsetroot -name "midget: $MIDGET_ROLE" -display :99
+fi
+
+echo "Midget display ready — ${SCREEN_WIDTH}x${SCREEN_HEIGHT}x${SCREEN_DEPTH} on :99${MIDGET_ROLE:+ [$MIDGET_ROLE]}"
 
 # If arguments provided, run them; otherwise interactive shell
 if [ $# -gt 0 ]; then

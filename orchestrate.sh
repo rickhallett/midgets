@@ -153,6 +153,7 @@ run_gemini() {
         -v "$VOL_JOBS":/opt/jobs \
         -e GEMINI_API_KEY="$GEMINI_API_KEY" \
         -e MIDGET_JOBS_DIR=/opt/jobs \
+        -e MIDGET_ROLE="$ROLE" \
         "$IMAGE" \
         bash -c "gemini -p \"\$(cat /opt/jobs/artifacts/${ROLE}-prompt.md)
 
@@ -192,6 +193,7 @@ run_grok() {
         -v "$VOL_JOBS":/opt/jobs \
         -e XAI_API_KEY="$XAI_API_KEY" \
         -e MIDGET_JOBS_DIR=/opt/jobs \
+        -e MIDGET_ROLE="$ROLE" \
         "$IMAGE" \
         bash -c '
 ROLE_PROMPT=$(cat /opt/jobs/artifacts/'"$ROLE"'-prompt.md)
@@ -253,6 +255,7 @@ run_codex() {
         -v "$VOL_JOBS":/opt/jobs \
         -e OPENAI_API_KEY="$OPENAI_API_KEY" \
         -e MIDGET_JOBS_DIR=/opt/jobs \
+        -e MIDGET_ROLE="$ROLE" \
         "$IMAGE" \
         bash -c "codex exec -m gpt-4.1-mini \
             --dangerously-bypass-approvals-and-sandbox \

@@ -308,10 +308,12 @@ ebook-clean:
 # View a midget's display via VNC. Starts a container with x11vnc
 # exposed on localhost:5900, then opens a VNC viewer.
 # Usage:
-#   make watch                   interactive shell, VNC on :5900
-#   make watch CMD="bash test-poc.sh"   run a command and watch
+#   make watch                              interactive shell, VNC on :5900
+#   make watch CMD="bash test-poc.sh"        run a command and watch
+#   make watch ROLE=watchdog CMD="..."       show role name in VNC title
 
 CMD ?=
+ROLE ?=
 
 watch:
 	@echo "Starting midget with VNC on localhost:5900..."
@@ -320,11 +322,13 @@ watch:
 		echo "Ctrl+C to stop."; \
 		docker run --rm -it \
 			-e MIDGET_VNC=1 \
+			-e MIDGET_ROLE="$(ROLE)" \
 			-p 5900:5900 \
 			$(MIDGET_IMAGE); \
 	else \
 		CONTAINER_ID=$$(docker run -d \
 			-e MIDGET_VNC=1 \
+			-e MIDGET_ROLE="$(ROLE)" \
 			-p 5900:5900 \
 			$(MIDGET_IMAGE) \
 			bash -c "$(CMD); echo 'CMD finished, container stays for VNC. Ctrl+C to stop.'; sleep infinity"); \
