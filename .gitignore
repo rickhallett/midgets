@@ -31,3 +31,7 @@ sites/oceanheart/resources/
 
 # Audio
 *.wav
+
+# Slopodar sweep (generated corpus and raw API responses)
+data/sweep/corpus/
+data/sweep/responses/
