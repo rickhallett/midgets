@@ -2,8 +2,11 @@
 # Midget entrypoint — starts virtual display + window manager
 set -e
 
+# Log directory for display services (keeps container stdout clean)
+MIDGET_LOG=/tmp/midget-display.log
+
 # Start Xvfb (virtual framebuffer)
-Xvfb :99 -screen 0 ${SCREEN_WIDTH}x${SCREEN_HEIGHT}x${SCREEN_DEPTH} -ac &
+Xvfb :99 -screen 0 ${SCREEN_WIDTH}x${SCREEN_HEIGHT}x${SCREEN_DEPTH} -ac >>"$MIDGET_LOG" 2>&1 &
 XVFB_PID=$!
 
 # Wait for Xvfb to accept connections (poll, not sleep)
@@ -23,7 +26,7 @@ if ! kill -0 $XVFB_PID 2>/dev/null; then
 fi
 
 # Start fluxbox (minimal window manager — needed for window focus/raise)
-fluxbox -display :99 &
+fluxbox -display :99 >>"$MIDGET_LOG" 2>&1 &
 FLUXBOX_PID=$!
 sleep 0.5
 
